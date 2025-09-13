@@ -38,12 +38,12 @@ if (mode == 1)
         if (guess < goal)
         {
             num_min = guess;
-            System.Console.WriteLine("Tt's too small!");
+            System.Console.WriteLine("It's too small!");
         }
         else if (guess > goal)
         {
             num_max = guess;
-            System.Console.WriteLine("Tt's too big!");
+            System.Console.WriteLine("It's too big!");
         }
         else
         {
@@ -52,8 +52,12 @@ if (mode == 1)
         }
     }
     while(guess_times < guess_limit);
-    //while (guess_times==guess_limit)
+        if (guess_times == guess_limit)
+        {
+            System.Console.WriteLine("You have used all your guesses. Game over!");
+        }
 }
+
 else if (mode == 2)
 {
     System.Console.WriteLine("You have chosen Normal mode. Good luck:>");
