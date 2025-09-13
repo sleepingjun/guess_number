@@ -17,7 +17,7 @@ else
     return;
 }
 
-System.Console.WriteLine("1. Easy mode: Range(1~100) with 5 times to guess.\n2. Normal mode: Range(1~500) with 20 times to guess.\n3. Hard mode: Range(1~1000) with 25 times to guess.");
+System.Console.WriteLine("1. Easy mode: Range(1~100) with 5 times to guess.\n2. Normal mode: Range(1~500) with 7 times to guess.\n3. Hard mode: Range(1~1000) with 10 times to guess.");
 System.Console.Write("Please enter the mode number (1, 2, or 3): ");
 int mode = System.Convert.ToInt32(System.Console.ReadLine());
 
@@ -61,13 +61,75 @@ if (mode == 1)
 else if (mode == 2)
 {
     System.Console.WriteLine("You have chosen Normal mode. Good luck:>");
-    return;
+    int num_max = 500;
+    int goal = 376; //test, I'll change to be random number.
+    int guess_times = 0;
+    int guess_limit = 7;
+
+    do
+    {
+        System.Console.WriteLine($"This is your {guess_times + 1} guess. \nGuess a number between {num_min} ~ {num_max}: ");
+        guess = System.Convert.ToInt32(System.Console.ReadLine());
+        guess_times++;
+
+        if (guess < goal)
+        {
+            num_min = guess;
+            System.Console.WriteLine("It's too small!");
+        }
+        else if (guess > goal)
+        {
+            num_max = guess;
+            System.Console.WriteLine("It's too big!");
+        }
+        else
+        {
+            System.Console.WriteLine("You guessed it!!!");
+            break;
+        }
+    }
+    while (guess_times < guess_limit);
+    if (guess_times == guess_limit)
+    {
+        System.Console.WriteLine("You have used all your guesses. Game over!");
+    }
 
 }
 else if (mode == 3)
 {
     System.Console.WriteLine("You have chosen Hard mode. Good luck, you really need it:>");
-    return;
+    int num_max = 1000;
+    int goal = 762; //test, I'll change to be random number.
+    int guess_times = 0;
+    int guess_limit = 10;
+
+    do
+    {
+        System.Console.WriteLine($"This is your {guess_times + 1} guess. \nGuess a number between {num_min} ~ {num_max}: ");
+        guess = System.Convert.ToInt32(System.Console.ReadLine());
+        guess_times++;
+
+        if (guess < goal)
+        {
+            num_min = guess;
+            System.Console.WriteLine("It's too small!");
+        }
+        else if (guess > goal)
+        {
+            num_max = guess;
+            System.Console.WriteLine("It's too big!");
+        }
+        else
+        {
+            System.Console.WriteLine("You guessed it!!!");
+            break;
+        }
+    }
+    while (guess_times < guess_limit);
+    if (guess_times == guess_limit)
+    {
+        System.Console.WriteLine("You have used all your guesses. Game over!");
+    }
 
 }
 else
