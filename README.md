@@ -1,4 +1,5 @@
 # guess_number  
+## Execute `Program.cs` to play the game~  
 ### todolist  
 - [X] 超過次數 game over
 - [X] mode normal
